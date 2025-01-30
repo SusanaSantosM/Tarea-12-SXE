@@ -34,8 +34,20 @@ Inserta 5 registros inventados en la tabla a través de una sentencia SQL.
 Consulta realizada:
 ```
 insert into EmpresasFCT (nombre,quiereAlumnos,numAlumnos,fechaContacto) values ('Mango',true,2,'03/09/2025'),
+('Movistar',true,3,'03/08/2025'),
 ('Fanny',false,0,'02/20/2025'),
 ('Safari',true,2,'03/12/2025'),
-('Movistar',true,3,'03/08/2025'),
 ('Clear',true,1,'03/15/2025');
 ```
+
+## Apartado 3
+Realiza una consulta donde se muestren todos los datos de la tabla EmpresasFCT
+ordenados por fechaContacto, de modo que en la primera la salga el que tenga la
+fecha más reciente.
+
+```
+select * from EmpresasFCT order by fechaContacto asc;
+```
+
+![image](https://github.com/user-attachments/assets/8c993820-1744-466c-b67e-d3429ab58fcb)
+
