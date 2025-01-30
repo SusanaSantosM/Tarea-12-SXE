@@ -67,3 +67,22 @@ select name,city,commercial_company_name from res_partner where company_id is nu
 
 ![image](https://github.com/user-attachments/assets/16a4e7c9-745a-4f58-bb52-160561186254)
 
+
+## Apartado 5
+Utilizando las tablas de odoo, obtén un listado de empresas proveedoras, que han
+emitido algún reembolso (facturas recticativas de proveedor).
+- Nombre de la empresa
+- Número de factura
+- Fecha de la factura
+- Total factura SIN impuestos
+Ordenadas por fecha de factura de modo que la primera sea la más reciente.
+
+**Consulta realizada**
+```
+select 
+	a.company_id as nombre,
+	b.name as factura,
+	c.date as fecha,
+	d.amount_total as reembolso
+from account_move where move_type='in_refund';
+```
