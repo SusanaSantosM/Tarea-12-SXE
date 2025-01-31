@@ -80,9 +80,25 @@ Ordenadas por fecha de factura de modo que la primera sea la más reciente.
 **Consulta realizada**
 ```
 select 
-	a.company_id as nombre,
-	b.name as factura,
-	c.date as fecha,
-	d.amount_total as reembolso
-from account_move where move_type='in_refund';
+c.name,
+p.name,
+p.invoice_date,
+p.amount_untaxed_signed 
+from res_partner c 
+left join account_move p on p.partner_id=c.id
+where p.move_type='in_refund' 
+order by p.invoice_date desc;
+```
+
+## Apartado 6
+Utilizando las tablas de odoo, obtén un listado de empresas clientes, a las que se les
+ha emitido más de dos facturas de venta (solo venta) conrmadas, mostrando los
+siguientes datos:
+- Nombre de la empresa
+- Número de facturas 
+- Total facturado SIN IMPUESTOS
+
+**Consulta realizada**
+```
+
 ```
