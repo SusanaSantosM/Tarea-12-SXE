@@ -100,5 +100,33 @@ siguientes datos:
 
 **Consulta realizada**
 ```
-
+select 
+	invoice_partner_display_name as Nombre_empresa,
+	count(distinct name) as numero_facturas,
+	sum(distinct amount_untaxed) as total_facturado_sin_impuestos
+from account_move 
+where move_type='out_invoice'
+group by invoice_partner_display_name
+having count(distinct name) > 2;
 ```
+
+## Apartado 7
+Crea una sentencia que actualice el correo de los contactos cuyo dominio es @bilbao.example.com a @bilbao.bizkaia.neus
+
+**Consulta realizada:**
+```
+update res_partner set email = 'info@bilbao.bizkaia.neus' where email = 'info@bilbao.example.com';
+```
+<details>
+ <summary>Saldra un aviso de actualización de datos</summary>
+<br>
+  
+![image](https://github.com/user-attachments/assets/1a1a6686-3997-4282-8c3f-a6699a223b8a)
+
+</details>
+
+Verificamos si el cambio fue correcto.
+
+![image](https://github.com/user-attachments/assets/1ec0bafd-c76a-4bab-bb7b-1b2aca31a675)
+
+
