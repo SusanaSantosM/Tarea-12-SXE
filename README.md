@@ -61,10 +61,10 @@ select * from EmpresasFCT order by fechaContacto asc;
 
 **Consulta realizada:**
 ```
-select name,city,commercial_company_name from res_partner where company_id is null and city = 'Tracy' order by commercial_company_name asc;
+select name,city,commercial_company_name from res_partner where is_company=false and city = 'Tracy' order by commercial_company_name asc;
 ```
 
-![image](https://github.com/user-attachments/assets/16a4e7c9-745a-4f58-bb52-160561186254)
+![image](https://github.com/user-attachments/assets/8d3cfbe1-7045-4c29-82eb-cc4db72374b2)
 
 
 ## Apartado 5
